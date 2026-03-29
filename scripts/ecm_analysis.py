@@ -1,14 +1,9 @@
-library(DESeq2)
+import pandas as pd
 
-# ejemplo simple
-counts <- matrix(sample(1:1000, 100, replace=TRUE), ncol=10)
-coldata <- data.frame(condition=rep(c("control","treated"), each=5))
+# Example ECM gene list
+ecm_genes = ["COL1A1", "COL3A1", "COL5A1", "FN1", "MMP2", "MMP9", "ELN"]
 
-dds <- DESeqDataSetFromMatrix(countData = counts,
-                              colData = coldata,
-                              design = ~ condition)
+df = pd.DataFrame(ecm_genes, columns=["ECM_Genes"])
 
-dds <- DESeq(dds)
-res <- results(dds)
-
-print(head(res))
+print("Extracellular Matrix Gene List:")
+print(df)
