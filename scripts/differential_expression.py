@@ -1,6 +1,9 @@
 import pandas as pd
 
-genes = ["COL1A1", "COL3A1", "COL5A1", "FN1", "MMP2"]
+def differential_expression(data):
+    # Placeholder function
+    print("Running differential expression analysis...")
+    return data
 
-df = pd.DataFrame(genes, columns=["ECM_genes"])
-print(df)
+if __name__ == "__main__":
+    print("Differential Expression Module")
